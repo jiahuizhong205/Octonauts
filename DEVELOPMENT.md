@@ -2,7 +2,7 @@
 
 本手册旨在指导团队成员快速搭建开发环境，并明确开发过程中的技术规约，确保代码质量与 AI 协作流程的标准化。
 
-## **1\. 环境准备 (Prerequisites)**
+## **1\. 环境准备**
 
 在开始之前，请确保你的本地机器已安装以下软件版本：
 
@@ -14,7 +14,7 @@
 | **Build Tool** | Maven 3.8+ | 后端依赖管理 |
 | **IDE** | IntelliJ IDEA / VS Code | 推荐安装 CheckStyle 与 AI 助手插件 |
 
-## **2\. 基础设施一键启动 (Infrastructure)**
+## **2\. 基础设施一键启动**
 
 项目使用 Docker 统一基础设施环境，避免本地数据库版本不一致的问题。
 
@@ -28,7 +28,7 @@
    * **Redis 7.0**: 端口 6379，用于存放 Session 与缓存数据。  
 3. **初始化数据**：首次启动后，请执行 `backend/src/main/resources/db/migration` 下的 SQL 脚本。
 
-## **3\. 后端开发规范 (Backend Guide)**
+## **3\. 后端开发规范**
 
 * **框架**：Spring Boot 3 \+ MyBatis-Plus。  
 * **启动方式**：运行 `CampusHubApplication.java`。  
@@ -37,7 +37,7 @@
   * 核心参数必须通过环境变量或 Spring Profiles 切换。  
 * **接口规范**：统一使用 RESTful 风格，所有接口返回值必须封装在 `Result<T>` 对象中。
 
-## **4\. 前端开发规范 (Frontend Guide)**
+## **4\. 前端开发规范**
 
 * **框架**：Vue 3 (Composition API) \+ Vite \+ Element Plus。  
 * **启动方式**：  

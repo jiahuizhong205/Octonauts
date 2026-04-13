@@ -1,0 +1,93 @@
+# =========================
+# OS / Editor
+# =========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+.vscode/
+.idea/
+*.iml
+
+# =========================
+# Logs
+# =========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# =========================
+# Frontend (Vue 3 + Vite)
+# =========================
+node_modules/
+dist/
+.vite/
+.cache/
+coverage/
+.eslintcache
+*.tsbuildinfo
+
+# =========================
+# Java / Spring Boot
+# =========================
+target/
+build/
+out/
+
+# Maven / Gradle caches
+.gradle/
+
+# Spring Boot runtime artifacts
+*.class
+*.jar
+*.war
+*.ear
+*.pid
+*.pid.lock
+hs_err_pid*
+replay_pid*
+
+# =========================
+# Java IDE / tooling files
+# =========================
+.classpath
+.project
+.settings/
+.factorypath
+.springBeans
+.sts4-cache/
+
+# =========================
+# Test / reports
+# =========================
+surefire-reports/
+failsafe-reports/
+
+# =========================
+# Docker / local data
+# =========================
+.docker/
+docker-data/
+mysql-data/
+redis-data/
+*.tar
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.swp
+*.swo
+~$*

@@ -85,3 +85,19 @@ jobs:
           if [ "${{ hashFiles('backend/pom.xml') }}" = "" ]; then
             echo "Backend check skipped: backend/pom.xml not found"
           fi
+
+# /*具体行为：
+# 前端流程（存在 frontend/package.json 时自动启用）
+# 安装依赖
+# 执行 lint（npm run lint --if-present）
+# 执行 build（npm run build --if-present）
+# 后端流程（存在 backend/pom.xml 时自动启用）
+# 执行 Checkstyle 风格检查（mvn -B checkstyle:check）
+# 执行编译检查（mvn -B -DskipTests compile）
+# 触发条件
+# push 到 main、develop
+# pull request 到 main、develop
+# 兼容当前仓库状态
+# 现在的 frontend 和 backend 目录还没初始化工程文件，所以对应任务会自动跳过
+# CI 里有 summary job 会输出跳过原因，便于后续排查
+# */

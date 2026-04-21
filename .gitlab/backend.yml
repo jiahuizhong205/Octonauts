@@ -1,0 +1,10 @@
+# 配置仅供参考！
+stages:
+  - build
+
+backend-build:
+  stage: build
+  image: maven:3.9.9-eclipse-temurin-17
+  script:
+    - cd backend
+    - mvn clean package -DskipTests

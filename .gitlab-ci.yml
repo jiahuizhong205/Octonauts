@@ -1,0 +1,22 @@
+stages:
+  - trigger
+
+# 触发后端 pipeline
+backend:
+  stage: trigger
+  trigger:
+    include:
+      - local: .gitlab/backend.yml
+  rules:
+    - changes:
+        - backend/**/*
+
+# 触发前端 pipeline
+frontend:
+  stage: trigger
+  trigger:
+    include:
+      - local: .gitlab/frontend.yml
+  rules:
+    - changes:
+        - frontend/**/*

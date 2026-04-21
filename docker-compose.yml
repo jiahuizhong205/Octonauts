@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  # 数据库服务：MySQL 8.0
+  # 负责存储用户信息、需求单详情、订单状态及评价数据
+  campushub-db:
+    image: mysql:8.0
+    container_name: campushub-mysql
+    restart: always
+    environment:
+      # 初始数据库名称
+      MYSQL_DATABASE: campushub
+      # 数据库超级用户密码
+      MYSQL_ROOT_PASSWORD: root_password
+      # 创建普通开发账号
+      MYSQL_USER: ch_dev
+      MYSQL_PASSWORD: ch_password
+    ports:
+      - "3306:3306"
+    volumes:
+      # 数据持久化，确保容器重启后数据不丢失
+      - ./mysql-data:/var/lib/mysql
+      # 自动执行初始化脚本目录（存放建表 SQL）
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - campushub-network
+    command: 
+      --character-set-server=utf8mb4 
+      --collation-server=utf8mb4_unicode_ci
+
+  # 缓存服务：Redis 7.0
+  # 用于存放用户 Session、高频访问的需求列表缓存以及抢单时的分布式锁
+  campushub-redis:
+    image: redis:7.0-alpine
+    container_name: campushub-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      # Redis 数据持久化
+      - ./redis-data:/data
+    networks:
+      - campushub-network
+    command: redis-server --appendonly yes
+
+# 定义共享网络，确保容器间可以通过服务名互相通信
+networks:
+  campushub-network:
+    driver: bridge

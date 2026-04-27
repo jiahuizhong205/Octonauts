@@ -16,49 +16,49 @@
 ```text
 graph TD  
     subgraph 表现层 View / UI  
-        A\[前端页面 Vue 3 / 小程序\]  
+        A[前端页面 Vue 3 / 小程序]  
     end
 
     subgraph 控制层 Controller / API  
-        B\[RESTful API 接口 / 参数校验\]  
+        B[RESTful API 接口 / 参数校验]  
     end
 
-    subgraph 业务逻辑层 Service \- 核心领域模块  
-        C1\[用户中心模块 user-service\]  
-        C2\[商品&资源模块 resource-service\]  
-        C3\[订单核心模块 order-service\]  
-        C4\[交易支付模块 trade-service\]  
+    subgraph 业务逻辑层 Service - 核心领域模块  
+        C1[用户中心模块 user-service]  
+        C2[商品&资源模块 resource-service]  
+        C3[订单核心模块 order-service]  
+        C4[交易支付模块 trade-service]  
     end  
       
     subgraph 支撑引擎  
-        E\[订单状态机引擎 事件驱动\]  
-        F\[Redis 分布式锁 / 缓存\]  
+        E[订单状态机引擎 事件驱动]  
+        F[Redis 分布式锁 / 缓存]  
     end
 
     subgraph 数据访问层 DAO / Mapper  
-        D1\[MyBatis-Plus 数据库操作\]  
+        D1[MyBatis-Plus 数据库操作]  
     end
 
     subgraph 基础设施层  
-        DB\[(MySQL 8.0 主从)\]  
+        DB[(MySQL 8.0 主从)]  
     end
 
-    A \--\>|HTTP 请求| B  
-    B \--\> C1  
-    B \--\> C2  
-    B \--\> C3  
-    B \--\> C4  
+    A -->|HTTP 请求| B  
+    B --> C1  
+    B --> C2  
+    B --> C3  
+    B --> C4  
       
-    C3 \--\> E  
-    C2 \--\> F  
-    C3 \--\> F  
+    C3 --> E  
+    C2 --> F  
+    C3 --> F  
       
-    C1 \--\> D1  
-    C2 \--\> D1  
-    C3 \--\> D1  
-    C4 \--\> D1  
+    C1 --> D1  
+    C2 --> D1  
+    C3 --> D1  
+    C4 --> D1  
       
-    D1 \--\> DB
+    D1 --> DB
 ```
 ## **2\. 模块划分**
 

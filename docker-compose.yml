@@ -9,7 +9,7 @@ services:
     restart: always
     environment:
       # 初始数据库名称
-      MYSQL_DATABASE: campushub
+      MYSQL_DATABASE: campushub_db
       # 数据库超级用户密码
       MYSQL_ROOT_PASSWORD: root_password
       # 创建普通开发账号

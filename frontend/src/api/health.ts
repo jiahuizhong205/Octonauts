@@ -5,7 +5,6 @@ export interface HealthResponse {
   message: string;
   data: {
     status: string;
-    service: string;
   };
 }
 

@@ -16,7 +16,7 @@ services:
       MYSQL_USER: ch_dev
       MYSQL_PASSWORD: ch_password
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       # 数据持久化，确保容器重启后数据不丢失
       - ./mysql-data:/var/lib/mysql

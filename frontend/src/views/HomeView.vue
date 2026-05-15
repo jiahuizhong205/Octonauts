@@ -12,7 +12,7 @@ const loadHealth = async () => {
   try {
     const response = await fetchHealth();
     statusText.value = response.data.data.status;
-    serviceName.value = response.data.data.service;
+    serviceName.value = response.data.message || 'CampusHub Backend';
   } catch (error) {
     const message = error instanceof Error ? error.message : '健康检查失败';
     statusText.value = 'ERROR';

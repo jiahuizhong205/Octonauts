@@ -1,6 +1,6 @@
 package com.campushub.requirement;
 
-import com.campushub.common.ApiResponse;
+import com.campushub.common.api.ApiResponse;
 import com.campushub.requirement.dto.PageResponse;
 import com.campushub.requirement.dto.RequirementDetailResponse;
 import com.campushub.requirement.dto.RequirementListItem;

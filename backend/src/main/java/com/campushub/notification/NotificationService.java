@@ -1,6 +1,6 @@
 package com.campushub.notification;
 
-import com.campushub.common.BusinessException;
+import com.campushub.common.exception.BusinessException;
 import com.campushub.notification.dto.NotificationItem;
 import com.campushub.notification.dto.UnreadCountResponse;
 import org.springframework.jdbc.core.simple.JdbcClient;

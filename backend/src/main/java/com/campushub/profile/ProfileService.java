@@ -1,6 +1,6 @@
 package com.campushub.profile;
 
-import com.campushub.common.BusinessException;
+import com.campushub.common.exception.BusinessException;
 import com.campushub.profile.dto.ProfileResponse;
 import com.campushub.profile.dto.ProfileUpdateRequest;
 import org.springframework.jdbc.core.simple.JdbcClient;

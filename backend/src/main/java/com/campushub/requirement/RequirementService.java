@@ -1,6 +1,6 @@
 package com.campushub.requirement;
 
-import com.campushub.common.BusinessException;
+import com.campushub.common.exception.BusinessException;
 import com.campushub.requirement.dto.PageResponse;
 import com.campushub.requirement.dto.RequirementDetailResponse;
 import com.campushub.requirement.dto.RequirementListItem;

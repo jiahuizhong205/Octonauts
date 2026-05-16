@@ -1,6 +1,6 @@
 package com.campushub.profile;
 
-import com.campushub.common.ApiResponse;
+import com.campushub.common.api.ApiResponse;
 import com.campushub.profile.dto.ProfileResponse;
 import com.campushub.profile.dto.ProfileUpdateRequest;
 import com.campushub.security.CurrentUser;

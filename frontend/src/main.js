@@ -1,5 +1,7 @@
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
 import App from './App.vue'
 import ProfileView from './views/ProfileView.vue'
 import RequirementListView from './views/RequirementListView.vue'
@@ -20,4 +22,4 @@ const router = createRouter({
   routes
 })
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(ElementPlus).mount('#app')

@@ -24,7 +24,7 @@
    ```
 
 2. **服务清单**：  
-   * **MySQL 8.0**: 端口 3306，初始数据库 campushub。  
+   * **MySQL 8.0**: 端口 3306，初始数据库 campushub_db。  
    * **Redis 7.0**: 端口 6379，用于存放 Session 与缓存数据。  
 3. **初始化数据**：首次启动后，请执行 `backend/src/main/resources/db/migration` 下的 SQL 脚本。
 

@@ -9,14 +9,14 @@ services:
     restart: always
     environment:
       # 初始数据库名称
-      MYSQL_DATABASE: campushub
+      MYSQL_DATABASE: campushub_db
       # 数据库超级用户密码
       MYSQL_ROOT_PASSWORD: root_password
       # 创建普通开发账号
       MYSQL_USER: ch_dev
       MYSQL_PASSWORD: ch_password
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       # 数据持久化，确保容器重启后数据不丢失
       - ./mysql-data:/var/lib/mysql

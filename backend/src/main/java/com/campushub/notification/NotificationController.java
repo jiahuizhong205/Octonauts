@@ -1,6 +1,6 @@
 package com.campushub.notification;
 
-import com.campushub.common.ApiResponse;
+import com.campushub.common.api.ApiResponse;
 import com.campushub.notification.dto.NotificationItem;
 import com.campushub.notification.dto.UnreadCountResponse;
 import com.campushub.security.CurrentUser;

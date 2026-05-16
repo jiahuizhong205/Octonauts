@@ -8,7 +8,10 @@ public enum ApiCode {
     NOT_FOUND(404, "资源不存在"),
     INTERNAL_ERROR(500, "服务端异常"),
     ORDER_TAKEN(4001, "手慢了，该需求已被他人接取"),
-    SELF_ORDER(4002, "发布者不可接取自身发布的需求");
+    SELF_ORDER(4002, "发布者不可接取自身发布的需求"),
+    USERNAME_TAKEN(4003, "用户名已存在"),
+    USER_NOT_FOUND(4004, "用户不存在"),
+    PASSWORD_ERROR(4005, "密码错误");
 
     private final Integer code;
     private final String message;

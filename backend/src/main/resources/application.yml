@@ -26,5 +26,6 @@ mybatis-plus:
       table-underline: true
 
 campushub:
-  auth:
-    user-header: X-User-Id
+  jwt:
+    secret: Y2FtcHVzaHViLWp3dC1zZWNyZXQtMjAyNS1wcm9kLXNlY3JldC1rZXktbmV2ZXItZXhwb3Nl
+    expiration-ms: 86400000

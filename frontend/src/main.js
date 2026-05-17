@@ -10,6 +10,8 @@ import RequirementListView from './views/RequirementListView.vue'
 import RequirementDetailView from './views/RequirementDetailView.vue'
 import PublishRequirementView from './views/PublishRequirementView.vue'
 import NotificationView from './views/NotificationView.vue'
+import OrderListView from './views/OrderListView.vue'
+import OrderDetailView from './views/OrderDetailView.vue'
 import { isLoggedIn } from './utils/auth'
 import './styles.css'
 
@@ -21,6 +23,8 @@ const routes = [
   { path: '/requirements', component: RequirementListView, meta: { requiresAuth: true } },
   { path: '/requirements/publish', component: PublishRequirementView, meta: { requiresAuth: true } },
   { path: '/requirements/:reqId', component: RequirementDetailView, meta: { requiresAuth: true } },
+  { path: '/orders', component: OrderListView, meta: { requiresAuth: true } },
+  { path: '/orders/:orderId', component: OrderDetailView, meta: { requiresAuth: true } },
   { path: '/notifications', component: NotificationView, meta: { requiresAuth: true } }
 ]
 

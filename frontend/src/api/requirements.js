@@ -20,3 +20,10 @@ export function createRequirement(data) {
     body: JSON.stringify(data)
   })
 }
+
+export function acceptOrder(reqId) {
+  return request('/api/v1/orders', {
+    method: 'POST',
+    body: JSON.stringify({ reqId })
+  })
+}

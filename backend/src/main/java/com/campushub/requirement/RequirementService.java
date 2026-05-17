@@ -1,6 +1,10 @@
 package com.campushub.requirement;
 
 import com.campushub.common.exception.BusinessException;
+import com.campushub.entity.BizRequirement;
+import com.campushub.entity.RequirementType;
+import com.campushub.mapper.BizRequirementMapper;
+import com.campushub.requirement.dto.CreateRequirementRequest;
 import com.campushub.requirement.dto.PageResponse;
 import com.campushub.requirement.dto.RequirementDetailResponse;
 import com.campushub.requirement.dto.RequirementListItem;
@@ -14,9 +18,11 @@ import java.util.Map;
 @Service
 public class RequirementService {
     private final JdbcClient jdbcClient;
+    private final BizRequirementMapper bizRequirementMapper;
 
-    public RequirementService(JdbcClient jdbcClient) {
+    public RequirementService(JdbcClient jdbcClient, BizRequirementMapper bizRequirementMapper) {
         this.jdbcClient = jdbcClient;
+        this.bizRequirementMapper = bizRequirementMapper;
     }
 
     public PageResponse<RequirementListItem> listRequirements(
@@ -98,5 +104,24 @@ public class RequirementService {
                 ))
                 .optional()
                 .orElseThrow(() -> new BusinessException(404, "需求不存在"));
+    }
+
+    public Long createRequirement(CreateRequirementRequest request, Long publisherId) {
+        try {
+            RequirementType.valueOf(request.type());
+        } catch (IllegalArgumentException e) {
+            throw new BusinessException(400, "无效的需求分类: " + request.type());
+        }
+
+        BizRequirement entity = new BizRequirement();
+        entity.setPublisherId(publisherId);
+        entity.setTitle(request.title());
+        entity.setDescription(request.description());
+        entity.setBudget(request.budget());
+        entity.setType(request.type());
+        entity.setStatus("PENDING");
+
+        bizRequirementMapper.insert(entity);
+        return entity.getReqId();
     }
 }

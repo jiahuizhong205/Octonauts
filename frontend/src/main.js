@@ -8,6 +8,7 @@ import RegisterView from './views/RegisterView.vue'
 import ProfileView from './views/ProfileView.vue'
 import RequirementListView from './views/RequirementListView.vue'
 import RequirementDetailView from './views/RequirementDetailView.vue'
+import PublishRequirementView from './views/PublishRequirementView.vue'
 import NotificationView from './views/NotificationView.vue'
 import { isLoggedIn } from './utils/auth'
 import './styles.css'
@@ -18,6 +19,7 @@ const routes = [
   { path: '/register', component: RegisterView },
   { path: '/profile', component: ProfileView, meta: { requiresAuth: true } },
   { path: '/requirements', component: RequirementListView, meta: { requiresAuth: true } },
+  { path: '/requirements/publish', component: PublishRequirementView, meta: { requiresAuth: true } },
   { path: '/requirements/:reqId', component: RequirementDetailView, meta: { requiresAuth: true } },
   { path: '/notifications', component: NotificationView, meta: { requiresAuth: true } }
 ]

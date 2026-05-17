@@ -13,3 +13,10 @@ export function listRequirements(params) {
 export function getRequirement(reqId) {
   return request(`/api/v1/requirements/${reqId}`)
 }
+
+export function createRequirement(data) {
+  return request('/api/v1/requirements', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  })
+}

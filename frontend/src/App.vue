@@ -5,6 +5,7 @@
 
       <template v-if="loggedIn">
         <RouterLink to="/requirements">需求大厅</RouterLink>
+        <RouterLink to="/requirements/publish">发布需求</RouterLink>
         <RouterLink to="/profile">个人资料</RouterLink>
         <RouterLink to="/notifications">消息通知</RouterLink>
         <a href="#" @click.prevent="handleLogout">退出</a>

@@ -12,6 +12,7 @@ import com.campushub.security.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
 
 @Service
 @RequiredArgsConstructor
@@ -31,7 +32,7 @@ public class AuthService {
         SysUser user = new SysUser();
         user.setUsername(request.getUsername());
         user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
-        user.setStudentId(request.getStudentId() != null ? request.getStudentId() : "U_" + request.getUsername());
+        user.setStudentId(StringUtils.hasText(request.getStudentId()) ? request.getStudentId() : "U_" + request.getUsername());
         user.setPhoneEncrypted("");
         user.setCampus(request.getCampus());
         user.setCreditScore(100);

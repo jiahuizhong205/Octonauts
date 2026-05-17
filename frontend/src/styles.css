@@ -152,6 +152,18 @@ textarea {
   padding: 12px 14px;
 }
 
+.message.error {
+  background: #fef0f0;
+  border-color: #f0b0b0;
+  color: #7d2020;
+}
+
+.message.success {
+  background: #ecfaf1;
+  border-color: #8fd4a6;
+  color: #1a5e32;
+}
+
 .list {
   display: grid;
   gap: 12px;

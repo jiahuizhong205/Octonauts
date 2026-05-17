@@ -76,7 +76,7 @@ start java -jar target\campushub-backend-0.0.1-SNAPSHOT.jar --spring.profiles.ac
 
 :: 3. 启动前端（如需要浏览器测试）
 cd frontend
-npm install
+npm install（第一次使用需要）
 npx vite --host
 
 :: 4. 获取测试 token（使用已有用户或注册新用户）

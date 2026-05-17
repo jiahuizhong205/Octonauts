@@ -26,6 +26,7 @@ CREATE TABLE `sys_user` (
   `bio` VARCHAR(255) DEFAULT NULL COMMENT '个人简介',
   `contact_visible` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '是否展示联系方式',
   `credit_score` INT NOT NULL DEFAULT 100 COMMENT '信用积分，初始100',
+  `role` TINYINT(1) NOT NULL DEFAULT 0 COMMENT '系统角色：0普通用户，1管理员',
   `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '注册时间',
   `updated_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
   PRIMARY KEY (`user_id`),
@@ -91,13 +92,13 @@ CREATE TABLE `biz_notification` (
   KEY `idx_user_read_created` (`user_id`, `read_status`, `created_at`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='站内通知表';
 
--- 4. 演示数据：用于庞彬负责的资料、需求浏览和通知页面联调
+-- 4. 演示数据
 INSERT INTO `sys_user` (
   `user_id`, `username`, `nickname`, `password_hash`, `phone_encrypted`, `student_id`,
-  `campus`, `college`, `major`, `grade`, `bio`, `contact_visible`, `credit_score`
+  `campus`, `college`, `major`, `grade`, `bio`, `contact_visible`, `credit_score`, `role`
 ) VALUES
-  (10001, 'pbpromax', '庞彬', 'demo_hash', 'demo_phone', '20260001', '仙林校区', '软件学院', '软件工程', '2023级', '喜欢把零散需求整理成清楚的任务。', 0, 100),
-  (10002, 'zjh', '仲嘉辉', 'demo_hash', 'demo_phone', '20260002', '仙林校区', '计算机学院', '计算机科学与技术', '2023级', '核心功能开发负责人。', 0, 98);
+  (10001, 'test_user1', '测试用户A', 'demo_hash', 'demo_phone_A', '20260001', '仙林校区', '软件学院', '软件工程', '2023级', '我是一个普通的测试用户。', 0, 100, 0),
+  (10002, 'test_admin', '系统管理员', 'demo_hash', 'demo_phone_B', '20260002', '仙林校区', '计算机学院', '计算机科学与技术', '2023级', '我是系统管理员，负责处理违规需求。', 0, 100, 1);
 
 INSERT INTO `biz_requirement` (
   `req_id`, `publisher_id`, `title`, `description`, `budget`, `type`, `status`

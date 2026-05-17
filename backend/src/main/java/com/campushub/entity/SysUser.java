@@ -32,6 +32,9 @@ public class SysUser {
     @TableField("credit_score")
     private Integer creditScore;
 
+    @TableField("role")
+    private Integer role;
+
     @TableField(value = "created_at", fill = FieldFill.INSERT)
     private LocalDateTime createdAt;
 
